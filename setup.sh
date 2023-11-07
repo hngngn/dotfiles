@@ -45,12 +45,24 @@ EOF
 cp lists/_fonts.lst fonts.lst
 cp lists/_zsh_plugins.lst zsh_plugins.lst
 cp lists/_configs.lst configs.lst
+cp lists/_system.lst system.lst
 
 ./font.sh fonts.lst
 ./config.sh configs.lst
 ./zsh.sh zsh_plugins.lst
 
-rm fonts.lst zsh_plugins.lst configs.lst
+while read srv; do
+  if [[ $(systemctl list-units --all -t service --full --no-legend "${srv}.service" | sed 's/^\s*//g' | cut -f1 -d' ') == "${srv}.service" ]]; then
+    echo "$srv service is already enabled, enjoy..."
+  else
+    echo "$srv service is not running, enabling..."
+    sudo systemctl enable ${srv}.service
+    sudo systemctl start ${srv}.service
+    echo "$srv service enabled, and running..."
+  fi
+done < <(cut -d '#' -f 1 system.lst)
+
+rm fonts.lst zsh_plugins.lst configs.lst system.lst
 
 cat <<"EOF"
 
