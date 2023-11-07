@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source scripts/fn
+source scripts/fn.sh
 
 cat <<"EOF"
 
@@ -16,20 +16,20 @@ cp lists/_base.lst package.lst
 
 if is_nvidia; then
 
-    echo "nvidia card detected, setup nvidia drivers..."
+  echo "nvidia card detected, setup nvidia drivers..."
 
-    cat /usr/lib/modules/*/pkgbase | while read krnl; do
-        echo "${krnl}-headers" >>package.lst
-    done
+  cat /usr/lib/modules/*/pkgbase | while read krnl; do
+    echo "${krnl}-headers" >>package.lst
+  done
 
-    echo -e "nvidia-dkms\nnvidia-utils" >>package.lst
-    sed -i "s/^hyprland-git/hyprland-nvidia-git/g" package.lst
+  echo -e "nvidia-dkms\nnvidia-utils" >>package.lst
+  sed -i "s/^hyprland-git/hyprland-nvidia-git/g" package.lst
 
 else
-    echo "nvidia card not detected, skipping nvidia drivers..."
+  echo "nvidia card not detected, skipping nvidia drivers..."
 fi
 
-./scripts/install package.lst
+./scripts/install.sh package.lst
 rm package.lst
 
 cat <<"EOF"
@@ -46,9 +46,9 @@ cp lists/_fonts.lst fonts.lst
 cp lists/_zsh_plugins.lst zsh_plugins.lst
 cp lists/_configs.lst configs.lst
 
-./scripts/restore/config configs.lst
-./scripts/restore/font fonts.lst
-./scripts/restore/zsh zsh_plugins.lst
+./scripts/config.sh configs.lst
+./scripts/font.sh fonts.lst
+./scripts/zsh.sh zsh_plugins.lst
 
 rm font.lst zsh_plugins.lst configs.lst
 

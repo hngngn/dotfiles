@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source fn
+source fn.sh
 
 if ! pkg_installed git; then
     sudo pacman -S git
