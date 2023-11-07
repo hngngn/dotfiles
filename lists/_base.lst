@@ -1,4 +1,9 @@
 pipewire
+pipewire-alsa
+pipewire-audio
+pipewire-jack
+pipewire-pulse
+gst-plugin-pipewire
 wireplumber
 networkmanager
 network-manager-applet
@@ -48,4 +53,5 @@ eza
 fzf
 oh-my-zsh-git
 pokemon-colorscripts-git
-otf-geist-fonts
+otf-geist-mono
+otf-geist
