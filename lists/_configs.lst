@@ -1,0 +1,3 @@
+${HOME}|.zshrc|zsh oh-my-zsh-git pokemon-colorscripts-git
+${HOME}/.config/Code/User|settings.json|visual-studio-code-bin
+${HOME}/.config/hypr|animations.conf hyprland.conf keybindings.conf windowrules.conf scripts|hyprland

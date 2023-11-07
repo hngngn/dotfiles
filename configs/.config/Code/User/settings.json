@@ -1,0 +1,13 @@
+{
+    "workbench.tree.indent": 20,
+    "editor.formatOnSave": true,
+    "editor.fontFamily": "Geist Mono",
+    "editor.fontLigatures": true,
+    "terminal.integrated.fontFamily": "Geist Mono",
+    "editor.lineHeight": 1.6,
+    "editor.renderWhitespace": "boundary",
+    "window.menuBarVisibility": "toggle",
+    "editor.minimap.enabled": false,
+    "telemetry.telemetryLevel": "off",
+    "terminal.external.linuxExec": "kitty"
+}
