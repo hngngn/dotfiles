@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source fn
+source fn.sh
 
 config_list=$1
 

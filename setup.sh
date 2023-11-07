@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source scripts/fn.sh
+source fn.sh
 
 cat <<"EOF"
 
@@ -23,13 +23,13 @@ if is_nvidia; then
   done
 
   echo -e "nvidia-dkms\nnvidia-utils" >>package.lst
-  sed -i "s/^hyprland-git/hyprland-nvidia-git/g" package.lst
+  sed -i "s/^hyprland/hyprland-nvidia/g" package.lst
 
 else
   echo "nvidia card not detected, skipping nvidia drivers..."
 fi
 
-./scripts/install.sh package.lst
+./install.sh package.lst
 rm package.lst
 
 cat <<"EOF"
@@ -46,9 +46,9 @@ cp lists/_fonts.lst fonts.lst
 cp lists/_zsh_plugins.lst zsh_plugins.lst
 cp lists/_configs.lst configs.lst
 
-./scripts/config.sh configs.lst
-./scripts/font.sh fonts.lst
-./scripts/zsh.sh zsh_plugins.lst
+./config.sh configs.lst
+./font.sh fonts.lst
+./zsh.sh zsh_plugins.lst
 
 rm font.lst zsh_plugins.lst configs.lst
 

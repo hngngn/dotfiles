@@ -18,6 +18,7 @@ if ! pkg_installed yay; then
 
     if [ $? -eq 0 ]; then
         echo "yay aur helper installed..."
+        rm -rf ~/aur_temp
         exit 0
     else
         echo "yay installation failed..."
