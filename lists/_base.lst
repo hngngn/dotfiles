@@ -27,6 +27,9 @@ pacman-contrib
 parallel
 jq
 imagemagick
+qt5-imageformats
+ffmpegthumbs
+kde-cli-tools
 brightnessctl
 pavucontrol
 pamixer
@@ -36,7 +39,7 @@ qt5ct
 qt6ct
 firefox
 kitty
-nemo-git
+dolphin
 visual-studio-code-bin
 vim
 ark
