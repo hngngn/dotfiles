@@ -50,7 +50,7 @@ cp lists/_configs.lst configs.lst
 ./config.sh configs.lst
 ./zsh.sh zsh_plugins.lst
 
-rm font.lst zsh_plugins.lst configs.lst
+rm fonts.lst zsh_plugins.lst configs.lst
 
 cat <<"EOF"
 
