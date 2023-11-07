@@ -26,9 +26,7 @@ if ! pkg_installed yay; then
     fi
 fi
 
-install_list=$1
-
-cat $install_list | while read pkg; do
+while read pkg; do
     if [ -z $pkg ]; then
         continue
     fi
@@ -47,7 +45,7 @@ cat $install_list | while read pkg; do
     else
         echo "error: unknown package ${pkg}..."
     fi
-done
+done < <(cut -d '#' -f 1 $1)
 
 if [ $(echo $pkg_arch | wc -w) -gt 0 ]; then
     echo "installing $pkg_arch from arch repo..."

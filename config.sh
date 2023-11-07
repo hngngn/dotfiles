@@ -33,7 +33,7 @@ cat $config_list | while read lst; do
 
 done
 
-if nvidia_detect; then
+if is_nvidia; then
     cp ${config_dir}/.config/hypr/nvidia.conf ${HOME}/.config/hypr/nvidia.conf
     echo -e 'source = ~/.config/hypr/nvidia.conf\n' >>${HOME}/.config/hypr/hyprland.conf
 fi

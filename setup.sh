@@ -46,8 +46,8 @@ cp lists/_fonts.lst fonts.lst
 cp lists/_zsh_plugins.lst zsh_plugins.lst
 cp lists/_configs.lst configs.lst
 
-./config.sh configs.lst
 ./font.sh fonts.lst
+./config.sh configs.lst
 ./zsh.sh zsh_plugins.lst
 
 rm font.lst zsh_plugins.lst configs.lst

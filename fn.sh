@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 export use_default="--noconfirm"
 
 is_nvidia() {

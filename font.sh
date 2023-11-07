@@ -2,9 +2,7 @@
 
 source fn.sh
 
-font_list=$1
-
-cat $font_list | while read lst; do
+while read lst; do
 
     fnt=$(echo $lst | awk -F '|' '{print $1}')
     tgt=$(echo $lst | awk -F '|' '{print $2}')
@@ -18,7 +16,7 @@ cat $font_list | while read lst; do
     sudo tar -xzf $(echo $PWD)/assets/${fnt}.tar.gz -C ${tgt}/
     echo "uncompressing ${fnt}.tar.gz --> ${tgt}..."
 
-done
+done < <(cut -d '#' -f 1 $1)
 
 echo "rebuilding font cache..."
 fc-cache -f
