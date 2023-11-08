@@ -2,11 +2,9 @@
 
 source fn.sh
 
-config_list=$1
-
 config_dir=$(echo $(echo $PWD)/configs)
 
-cat $config_list | while read lst; do
+while read lst; do
 
     pth=$(echo $lst | awk -F '|' '{print $1}')
     cfg=$(echo $lst | awk -F '|' '{print $2}')
@@ -31,7 +29,7 @@ cat $config_list | while read lst; do
         echo "config restored ${pth} <-- $config_dir$tgt/$cfg_chk..."
     done
 
-done
+done < <(cut -d '#' -f 1 $1)
 
 if is_nvidia; then
     cp ${config_dir}/.config/hypr/nvidia.conf ${HOME}/.config/hypr/nvidia.conf

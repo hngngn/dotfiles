@@ -19,6 +19,7 @@ done
 
 # set device action
 
+shift $((OPTIND -1))
 step="${2:-5}"
 
 case $1 in
