@@ -1,13 +1,15 @@
 {
     "workbench.tree.indent": 20,
     "editor.formatOnSave": true,
-    "editor.fontFamily": "Geist Mono",
+    "editor.fontFamily": "JetBrainsMono NF",
     "editor.fontLigatures": true,
-    "terminal.integrated.fontFamily": "Geist Mono",
+    "terminal.integrated.fontFamily": "JetBrainsMono NF",
     "editor.lineHeight": 1.6,
     "editor.renderWhitespace": "boundary",
     "window.menuBarVisibility": "toggle",
     "editor.minimap.enabled": false,
     "telemetry.telemetryLevel": "off",
-    "terminal.external.linuxExec": "kitty"
+    "terminal.external.linuxExec": "kitty",
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.smoothScrolling": true
 }

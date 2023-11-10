@@ -41,3 +41,11 @@ aur_pkg_available() {
         return 1
     fi
 }
+
+is_me() {
+    if [ $USER == "hoang" ];then
+        return 0
+    else
+        return 1
+    fi
+}

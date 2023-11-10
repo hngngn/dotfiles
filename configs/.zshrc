@@ -105,7 +105,7 @@ pokemon-colorscripts --no-title -r
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
-alias ls='eza --group-directories-first --icons --color-scale'
+alias ls='eza --group-directories-first --icons --color-scale all'
 
 # Show in tree view
 alias lt='eza --tree --level=2 --icons'

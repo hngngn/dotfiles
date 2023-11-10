@@ -1,0 +1,51 @@
+* {
+  background-image: none;
+  transition: 200ms;
+  font-family: "Inter";
+}
+
+@import "$HOME/.config/waybar/themes/theme.css";
+
+window {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+button {
+  color: black;
+  background-color: @wb-act-fg;
+  outline-style: none;
+  border: none;
+  border-width: 0px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20%;
+  border-radius: 30px;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+button:focus,
+button:hover,
+button:active {
+  background-color: @main-fg;
+}
+
+#lock {
+  background-image: image(url("$HOME/.config/wlogout/icons/lock.png"));
+  margin: 250px 20px 20px 600px;
+}
+
+#shutdown {
+  background-image: image(url("$HOME/.config/wlogout/icons/power.png"));
+  margin: 250px 600px 20px 20px;
+}
+
+#logout {
+  background-image: image(url("$HOME/.config/wlogout/icons/logout.png"));
+  margin: 20px 20px 250px 600px;
+}
+
+#reboot {
+  background-image: image(url("$HOME/.config/wlogout/icons/reboot.png"));
+  margin: 20px 600px 250px 20px;
+}

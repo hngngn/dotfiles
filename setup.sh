@@ -23,7 +23,7 @@ if is_nvidia; then
   done
 
   echo -e "nvidia-dkms\nnvidia-utils" >>package.lst
-  sed -i "s/^hyprland/hyprland-nvidia/g" package.lst
+  sed -i "s/^hyprland-git/hyprland-nvidia-git/g" package.lst
 
 else
   echo "nvidia card not detected, skipping nvidia drivers..."
@@ -42,9 +42,25 @@ cat <<"EOF"
 
 EOF
 
+cp lists/_configs.lst configs.lst
+
+if is_me; then
+  cp configs/.config/hypr/hyprland.conf hyprland.conf
+
+  sed -i "s/^monitor = ,preferred,auto,auto/monitor = eDP-1, 1920x1080@60, 0x0, 1/g" hyprland.conf
+  cp -r hyprland.conf ${HOME}/.config/hypr
+  rm hyprland.conf
+else
+  sed -i 's#${HOME}/.config/hypr|animations.conf keybindings.conf windowrules.conf scripts|hyprland#${HOME}/.config/hypr|animations.conf hyprland.conf keybindings.conf windowrules.conf scripts|hyprland#g' configs.lst
+  rm .gtkrc-2.0
+fi
+
 ./font.sh lists/_fonts.lst
-./config.sh lists/_configs.lst
+./theme.sh lists/_themes.lst
+./config.sh configs.lst
 ./zsh.sh lists/_zsh_plugins.lst
+./etc.sh
+rm configs.lst
 
 while read srv; do
   if [[ $(systemctl list-units --all -t service --full --no-legend "${srv}.service" | sed 's/^\s*//g' | cut -f1 -d' ') == "${srv}.service" ]]; then
