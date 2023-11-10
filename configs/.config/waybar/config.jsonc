@@ -6,7 +6,6 @@
   "exclusive": true,
   "passthrough": false,
   "gtk-layer-shell": true,
-
   "modules-left": [
     "custom/padd",
     "custom/l_end",
@@ -43,12 +42,10 @@
     "custom/r_end",
     "custom/padd"
   ],
-
   "cpu": {
     "interval": 10,
     "format": "󰍛 {usage}%"
   },
-
   "memory": {
     "interval": 30,
     "format": "󰾆 {percentage}%",
@@ -57,7 +54,6 @@
     "tooltip": true,
     "tooltip-format": " {used:0.1f}GB/{total:0.1f}GB"
   },
-
   "custom/gpuinfo": {
     "exec": " ~/.config/hypr/scripts/gpuinfo.sh",
     "return-type": "json",
@@ -66,7 +62,6 @@
     "tooltip": true,
     "max-length": 1000
   },
-
   "idle_inhibitor": {
     "format": "{icon}",
     "format-icons": {
@@ -74,35 +69,39 @@
       "deactivated": ""
     }
   },
-
   "clock": {
     "format": "{:%H:%M 󰃭 %a %d}",
     "tooltip-format": "<tt><big>{calendar}</big></tt>"
   },
-
   "hyprland/window": {
-    "format": "  {}",
+    "format": "  {}",
     "separate-outputs": true,
     "rewrite": {
       "hoang@nitro:(.*)": "$1 ",
-      "(.*) — Mozilla Firefox": "$1 󰈹",
-      "(.*)Mozilla Firefox": "Firefox 󰈹",
       "(.*) - Visual Studio Code": "$1 󰨞",
-      "(.*)Visual Studio Code": "Code 󰨞",
-      "(.*) — Dolphin": "$1 󰉋"
+      "(.*)Visual Studio Code": "Code 󰨞"
     },
     "max-length": 1000
   },
-
   "backlight": {
     "device": "intel_backlight",
     "format": "{icon} {percent}%",
-    "format-icons": ["", "", "", "", "", "", "", "", ""],
-    "on-scroll-up": "brightnessctl set 1%+",
-    "on-scroll-down": "brightnessctl set 1%-",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "on-scroll-up": "~/.config/hypr/scripts/brightnesscontrol.sh i",
+    "on-scroll-down": "~/.config/hypr/scripts/brightnesscontrol.sh d",
+    "scroll-step": 5,
     "min-length": 6
   },
-
   "network": {
     "format-wifi": "󰤨 {essid}",
     "format-ethernet": "󱘖 Wired",
@@ -112,7 +111,6 @@
     "format-alt": "󰤨 {signalStrength}%",
     "interval": 5
   },
-
   "bluetooth": {
     "format": "",
     "format-disabled": "", // an empty format will hide the module
@@ -121,7 +119,6 @@
     "tooltip-format-connected": "{device_enumerate}",
     "tooltip-format-enumerate-connected": " {device_alias}"
   },
-
   "pulseaudio": {
     "format": "{icon} {volume}",
     "format-muted": "婢",
@@ -138,10 +135,13 @@
       "phone": "",
       "portable": "",
       "car": "",
-      "default": ["", "", ""]
+      "default": [
+        "",
+        "",
+        ""
+      ]
     }
   },
-
   "pulseaudio#microphone": {
     "format": "{format_source}",
     "format-source": "",
@@ -153,7 +153,6 @@
     "tooltip-format": "{format_source} {source_desc} // {source_volume}%",
     "scroll-step": 5
   },
-
   "custom/updates": {
     "exec": "~/.config/hypr/scripts/systemupdate.sh",
     "return-type": "json",
@@ -162,12 +161,10 @@
     "interval": 86400, // once every day
     "tooltip": true
   },
-
   "tray": {
     "icon-size": 14,
     "spacing": 5
   },
-
   "battery": {
     "states": {
       "good": 95,
@@ -177,47 +174,51 @@
     "format": "{icon} {capacity}%",
     "format-charging": " {capacity}%",
     "format-plugged": " {capacity}%",
-    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    "format-icons": [
+      "󰂎",
+      "󰁺",
+      "󰁻",
+      "󰁼",
+      "󰁽",
+      "󰁾",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰂂",
+      "󰁹"
+    ]
   },
-
   // modules for padding //
-
   "custom/l_end": {
     "format": " ",
     "interval": "once",
     "tooltip": false
   },
-
   "custom/r_end": {
     "format": " ",
     "interval": "once",
     "tooltip": false
   },
-
   "custom/sl_end": {
     "format": " ",
     "interval": "once",
     "tooltip": false
   },
-
   "custom/sr_end": {
     "format": " ",
     "interval": "once",
     "tooltip": false
   },
-
   "custom/rl_end": {
     "format": " ",
     "interval": "once",
     "tooltip": false
   },
-
   "custom/rr_end": {
     "format": " ",
     "interval": "once",
     "tooltip": false
   },
-
   "custom/padd": {
     "format": "  ",
     "interval": "once",

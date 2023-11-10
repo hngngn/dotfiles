@@ -52,7 +52,6 @@ if is_me; then
   rm hyprland.conf
 else
   sed -i 's#${HOME}/.config/hypr|animations.conf keybindings.conf windowrules.conf scripts|hyprland#${HOME}/.config/hypr|animations.conf hyprland.conf keybindings.conf windowrules.conf scripts|hyprland#g' configs.lst
-  rm .gtkrc-2.0
 fi
 
 ./font.sh lists/_fonts.lst
@@ -61,17 +60,6 @@ fi
 ./zsh.sh lists/_zsh_plugins.lst
 ./etc.sh
 rm configs.lst
-
-while read srv; do
-  if [[ $(systemctl list-units --all -t service --full --no-legend "${srv}.service" | sed 's/^\s*//g' | cut -f1 -d' ') == "${srv}.service" ]]; then
-    echo "$srv service is already enabled, enjoy..."
-  else
-    echo "$srv service is not running, enabling..."
-    sudo systemctl enable ${srv}.service
-    sudo systemctl start ${srv}.service
-    echo "$srv service enabled, and running..."
-  fi
-done < <(cut -d '#' -f 1 lists/_system.lst)
 
 cat <<"EOF"
 
@@ -82,3 +70,6 @@ cat <<"EOF"
   \/____/   \/_____/   \/_/ \/_/   \/_____/
 
 EOF
+
+echo "Rebooting in 3s..."
+sleep 3 && reboot

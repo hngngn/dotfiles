@@ -11,3 +11,4 @@ ${HOME}/.config|Kvantum|kvantum
 ${HOME}/.config|kitty|kitty
 ${HOME}/.config|wlogout|wlogout
 ${HOME}/.config|swaylock|swaylock
+${HOME}/.config|dunst|dunst

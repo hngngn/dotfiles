@@ -15,6 +15,7 @@ qt5-wayland
 qt6-wayland
 qt5-quickcontrols2
 hyprland-git
+dunst
 rofi-lbonn-wayland-git
 waybar-hyprland-git
 hyprpaper
@@ -30,7 +31,6 @@ pacman-contrib
 parallel
 jq
 imagemagick
-libgsf
 brightnessctl
 pavucontrol
 pamixer
@@ -39,13 +39,12 @@ kvantum
 qt5ct
 brave-bin
 kitty
-nemo-git
+nemo
+nemo-engrampa
 visual-studio-code-bin
 neovim
-ark
 zsh
 eza
 fzf
-oh-my-zsh-git
 pokemon-colorscripts-git
 btop
