@@ -1,4 +1,4 @@
-${HOME}|.zshrc|zsh oh-my-zsh-git pokemon-colorscripts-git
+${HOME}|.zshrc|zsh pokemon-colorscripts-git
 ${HOME}/.config/Code/User|settings.json|visual-studio-code-bin
 ${HOME}/.config/hypr|animations.conf keybindings.conf hyprpaper.conf windowrules.conf scripts themes|hyprland
 ${HOME}/.config|nwg-look gtk-3.0 xsettingsd|nwg-look
