@@ -51,7 +51,7 @@ if is_me; then
   cp -r hyprland.conf ${HOME}/.config/hypr
   rm hyprland.conf
 else
-  sed -i 's#${HOME}/.config/hypr|animations.conf keybindings.conf windowrules.conf scripts|hyprland#${HOME}/.config/hypr|animations.conf hyprland.conf keybindings.conf windowrules.conf scripts|hyprland#g' configs.lst
+  sed -i 's#${HOME}/.config/hypr|animations.conf keybindings.conf hyprpaper.conf windowrules.conf scripts themes|hyprland#${HOME}/.config/hypr|animations.conf hyprland.conf keybindings.conf hyprpaper.conf windowrules.conf scripts themes|hyprland#g' configs.lst
 fi
 
 ./font.sh lists/_fonts.lst
