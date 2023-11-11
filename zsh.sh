@@ -22,10 +22,10 @@ git config fsck.zeroPaddedFilemode ignore && \
 git config fetch.fsck.zeroPaddedFilemode ignore && \
 git config receive.fsck.zeroPaddedFilemode ignore && \
 git config oh-my-zsh.remote origin && \
-git config oh-my-zsh.branch "$BRANCH" && \
-git remote add origin "$REMOTE" && \
+git config oh-my-zsh.branch master && \
+git remote add origin https://github.com/ohmyzsh/ohmyzsh.git && \
 git fetch --depth=1 origin && \
-git checkout -b "$BRANCH" "origin/$BRANCH" || {
+git checkout -b master "origin/master" || {
     [ ! -d "$zsh_path" ] || {
         cd -
         rm -rf "$zsh_path" 2>/dev/null
