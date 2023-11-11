@@ -4,7 +4,7 @@ clock
 screenshot
 effect-blur=15x5
 color=1f1d2e80
-font="Inter"
+font="Noto Sans"
 indicator
 indicator-radius=200
 indicator-thickness=20

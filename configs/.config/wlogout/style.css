@@ -1,7 +1,7 @@
 * {
   background-image: none;
   transition: 200ms;
-  font-family: "Inter";
+  font-family: "Noto Sans";
 }
 
 @import "$HOME/.config/waybar/themes/theme.css";

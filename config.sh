@@ -35,3 +35,7 @@ if is_nvidia; then
     cp ${config_dir}/.config/hypr/nvidia.conf ${HOME}/.config/hypr/nvidia.conf
     echo -e 'source = ~/.config/hypr/nvidia.conf\n' >>${HOME}/.config/hypr/hyprland.conf
 fi
+
+if is_me; then
+  sed -i "s/^monitor = ,preferred,auto,auto/monitor = eDP-1, 1920x1080@60, 0x0, 1/g" $HOME/.config/hypr/hyprland.conf
+fi
