@@ -42,24 +42,15 @@ cat <<"EOF"
 
 EOF
 
-cp lists/_configs.lst configs.lst
-
-if is_me; then
-  cp configs/.config/hypr/hyprland.conf hyprland.conf
-
-  sed -i "s/^monitor = ,preferred,auto,auto/monitor = eDP-1, 1920x1080@60, 0x0, 1/g" hyprland.conf
-  cp -r hyprland.conf ${HOME}/.config/hypr
-  rm hyprland.conf
-else
-  sed -i 's#${HOME}/.config/hypr|animations.conf keybindings.conf hyprpaper.conf windowrules.conf scripts themes|hyprland#${HOME}/.config/hypr|animations.conf hyprland.conf keybindings.conf hyprpaper.conf windowrules.conf scripts themes|hyprland#g' configs.lst
-fi
-
 ./font.sh lists/_fonts.lst
 ./theme.sh lists/_themes.lst
 ./zsh.sh lists/_zsh_plugins.lst
-./config.sh configs.lst
+./config.sh lists/_configs.lst
 ./etc.sh
-rm configs.lst
+
+if is_me; then
+  sed -i "s/^monitor = ,preferred,auto,auto/monitor = eDP-1, 1920x1080@60, 0x0, 1/g" $HOME/.config/hypr/hyprland.conf
+fi
 
 while read srv; do
   if [[ $(systemctl list-units --all -t service --full --no-legend "${srv}.service" | sed 's/^\s*//g' | cut -f1 -d' ') == "${srv}.service" ]]; then

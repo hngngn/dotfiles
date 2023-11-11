@@ -7,7 +7,7 @@ zsh_plugin_path="$zsh_path/custom/plugins"
 
 if [ -d $zsh_path ]; then
     echo "oh my zsh is already installed..."
-    rm -rf $zsh_path
+    exit 0
 fi
 
 if [ -n "$zsh_path" ]; then
