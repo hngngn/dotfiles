@@ -25,7 +25,8 @@ git config oh-my-zsh.remote origin && \
 git config oh-my-zsh.branch master && \
 git remote add origin https://github.com/ohmyzsh/ohmyzsh.git && \
 git fetch --depth=1 origin && \
-git checkout -b master "origin/master"
+git checkout -b master "origin/master" && \ 
+cd -
 
 if [ $? -eq 0 ]; then
     chsh -s $(which zsh)
