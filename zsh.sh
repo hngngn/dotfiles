@@ -3,18 +3,22 @@
 source fn.sh
 
 zsh_path="$HOME/.oh-my-zsh"
+zsh_plugin_path="$zsh_path/custom/plugins"
 
 if [ -d $zsh_path ]; then
     echo "oh my zsh is already installed..."
-    exit 0
+    rm -rf $zsh_path
 fi
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+git clone git://github.com/robbyrussell/oh-my-zsh.git $zsh_path
+chsh -s $(which zsh)
 
-if [ $? -eq 0 ]; then
-    echo "oh my zsh installed..."
-    exit 0
-else
-    echo "oh my zsh installation failed..."
-    exit $?
-fi
+while read r_plugin; do
+    z_plugin=$(echo $r_plugin | awk -F '/' '{print $NF}')
+    if [ "${r_plugin:0:4}" == "http" ] && [ ! -d $zsh_plugin_path/$z_plugin ]; then
+        sudo git clone $r_plugin $zsh_plugin_path/$z_plugin
+    fi
+    w_plugin=$(echo $w_plugin ${z_plugin})
+done < <(cut -d '#' -f 1 $1)
+
+echo "intalling zsh plugins --> ${w_plugin}"

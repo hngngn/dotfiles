@@ -56,8 +56,8 @@ fi
 
 ./font.sh lists/_fonts.lst
 ./theme.sh lists/_themes.lst
+./zsh.sh lists/_zsh_plugins.lst
 ./config.sh configs.lst
-./zsh_plugins.sh lists/_zsh_plugins.lst
 ./etc.sh
 rm configs.lst
 
