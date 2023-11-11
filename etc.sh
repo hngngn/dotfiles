@@ -20,6 +20,7 @@ fi
 if pkg_installed nemo; then
     gsettings set org.cinnamon.desktop.default-applications.terminal exec kitty && \
     gsettings set org.nemo.preferences.menu-config background-menu-open-as-root false && \
+    gsettings set org.nemo.preferences.menu-config selection-menu-open-as-root false && \
     gsettings set org.nemo.preferences thumbnail-limit 10485760
 
     xdg-mime default nemo.desktop inode/directory

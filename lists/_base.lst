@@ -25,7 +25,7 @@ grimblast-git
 slurp
 swappy
 cliphist
-polkit-kde-agent
+mate-polkit
 xdg-desktop-portal-hyprland
 pacman-contrib
 parallel
