@@ -40,3 +40,5 @@ while read r_plugin; do
 done < <(cut -d '#' -f 1 $1)
 
 echo "intalling zsh plugins --> ${w_plugin}"
+
+source $zsh_path
