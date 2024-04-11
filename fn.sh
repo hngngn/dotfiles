@@ -43,7 +43,7 @@ aur_pkg_available() {
 }
 
 is_me() {
-    if [ $USER == "jay" ];then
+    if [ $USER == "hngngn" ];then
         return 0
     else
         return 1

@@ -14,10 +14,10 @@ sddm-git
 qt5-wayland
 qt6-wayland
 qt5-quickcontrols2
-hyprland-git
+hyprland
 dunst
 rofi-lbonn-wayland-git
-waybar-git
+waybar
 hyprpaper
 swaylock-effects-git
 wlogout
