@@ -49,3 +49,11 @@ is_me() {
         return 1
     fi
 }
+
+is_grub() {
+    if [ -d "/boot/grub" ];then
+        return 0
+    else
+        return 1
+    fi
+}

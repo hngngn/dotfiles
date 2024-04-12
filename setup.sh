@@ -47,14 +47,22 @@ EOF
 ./config.sh lists/_configs.lst
 ./etc.sh
 
+if is_nvidia && is_grub; then
+  sudo ./nvidia.sh
+else
+  echo "only support grub..."
+fi
+
 while read srv; do
   if [[ $(systemctl list-units --all -t service --full --no-legend "${srv}.service" | sed 's/^\s*//g' | cut -f1 -d' ') == "${srv}.service" ]]; then
     echo "$srv service is already enabled, enjoy..."
   else
-    echo "$srv service is not running, enabling..."
+    echo "$srv service is not enabled, enabling..."
     sudo systemctl enable ${srv}.service
-    sudo systemctl start ${srv}.service
-    echo "$srv service enabled, and running..."
+    if [[ "$srv" != "nvidia-suspend" && "$srv" != "nvidia-hibernate" && "$srv" != "nvidia-resume" ]]; then
+      sudo systemctl start ${srv}.service
+      echo "$srv service enabled and started..."
+    fi
   fi
 done < <(cut -d '#' -f 1 lists/_system.lst)
 

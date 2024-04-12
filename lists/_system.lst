@@ -1,3 +1,6 @@
+nvidia-suspend
+nvidia-hibernate
+nvidia-resume
 NetworkManager
 bluetooth
 sddm
